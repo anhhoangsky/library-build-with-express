@@ -4,6 +4,9 @@ br
 label(for="") Tim Kiem 
 input(type="text", name="searchValues")
 ul
-    li Learn Docker - Fundamentals of Docker 18.x 
-    li Packt.NET.Core.2.0.By.Example
-    li You don't know JS
+    each book in bookshelf
+        li 
+            h3= book.bookName
+            span description: 
+            i= book.description
+            a(href="bookshelf/" + book.bookId) View

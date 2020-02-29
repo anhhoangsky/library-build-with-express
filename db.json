@@ -1,15 +1,18 @@
 {
   "bookshelf": [
     {
-      "bookName": "Learn Docker - Fundamentals of Docker 18.x",
+      "bookId": "1",
+      "bookName": "Learn Docker - Fundamentals of Docker 18.x ",
       "description": "nothing"
     },
     {
+      "bookId": "2",
       "bookName": "Packt.NET.Core.2.0.By.Example",
       "description": "nothing"
     },
     {
-      "bookName": "You don't know JS",
+      "bookId": "3",
+      "bookName": "You don't know JS ",
       "description": "nothing"
     }
   ]
