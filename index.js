@@ -10,13 +10,16 @@ var bookshelf = require('./routes/bookshelf.router.js')
 
 app.get('/', (req, res) => {//HomePage
     res.render('index',{
-        Title: "Co Anh Day"
+        quocte: "Sách hay, cũng như bạn tốt, ít và được chọn lựa; chọn lựa càng nhiều, thưởng thức càng nhiều.",
+        footer: "Good books, like good friends, are few and chosen; the more select, the more enjoyable.Louisa May Alcott"
+
     })
 });
 
 app.use('/bookshelf', bookshelf)//List Book
 
-
+//static files
+app.use(express.static('public'))
 
 // db.defaults({
 //     bookshelf: [

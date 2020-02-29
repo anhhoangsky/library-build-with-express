@@ -1,3 +1,20 @@
-h1 MODERN MVC
-a(href="/bookshelf") View List Books
-h2= Title
+extends ./layout/b4  
+block content
+    h1.mx-auto.text-center MODEL MVC
+
+    blockquote.blockquote.text-center
+        p= quocte
+    footer.blockquote-footer.text-center
+        footer= footer
+    div( aria-live='polite', aria-atomic='true', style='position: relative; min-height: 200px;')
+    .toast(style='position: absolute; top: 0; right: 0;' data-delay="1500")
+        .toast-header
+        img.rounded.mr-2(src='/img/toast.jpg',width="30px",height="30px", alt='...')
+        strong.mr-auto Welcome
+        small  Ohm..!
+        button.ml-2.mb-1.close(type='button', data-dismiss='toast', aria-label='Close')
+            span(aria-hidden='true') &times;
+        .toast-body You are lovely
+        |OMG! Love You So Much
+
+    script(src="/script.js")
