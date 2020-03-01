@@ -1,0 +1,18 @@
+.toast{
+    background-color: rgba(255, 0, 64, 0.1);
+    width: 300px;
+    color: #fff;
+    animation: warning 1s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes warning{
+    from{
+        color: #fff;
+        background-color: rgba(255, 0, 64, 0.473);
+    }
+    to{
+        color: #333;
+        background-color: rgba(255, 0, 64, 0.753);
+    }
+}
