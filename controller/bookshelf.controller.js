@@ -12,6 +12,7 @@ var pattern = 'aA0'
 
 //exports la object -> chua duoc function, variable, object
 module.exports.index = (req, res) => {
+    console.log(req.cookies)
     res.render('bookshelf/index', {
         bookshelf: db.get('bookshelf').value(),
         title: "List"
@@ -36,19 +37,6 @@ module.exports.view = (req, res) => {
 
 module.exports.createPost = (req, res) => {
     req.body.bookId = randomId(len, pattern)
-    console.log(req.body)
-    var errs = [];
-    if (!req.body.bookName) {
-        errs.push('Name is required.')
-        res.render('bookshelf/create', {
-            errs: errs,
-            values: req.body
-        })
-        return;
-    }
-    if (!req.body.description) {
-        req.body.description = "nothing"
-    }
     db.get('bookshelf').push(req.body).write()
     res.redirect('/bookshelf')
 }
