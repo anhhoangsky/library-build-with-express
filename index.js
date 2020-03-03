@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-var validate = require("./validate/auth.validate")
+var middleware = require("./middleware/auth.middleware")
 
 var cookieParser = require('cookie-parser')
 app.use(express.json()) //parse Json
@@ -22,7 +22,7 @@ app.get('/', (req, res) => {//HomePage
         footer: "Good books, like good friends, are few and chosen; the more select, the more enjoyable.Louisa May Alcott"
     })
 });
-app.use('/bookshelf', validate.loginSession, bookshelf)//List Book
+app.use('/bookshelf', middleware.loginSession, bookshelf)//List Book
 app.use('/login', auth) //login
 //static files
 app.use(express.static('public'))

@@ -4,27 +4,26 @@ const adapter = new FileSync('db.json')
 const db = low(adapter)
 
 module.exports.loginPost = (req, res, next)=>{
-    console.log(req.body)
+    // console.log(req.body)
     var password = req.body.Password
     var user = db.get("users").find({email: req.body.Email}).value()
     if(!user){
-        res.render("auth/login")
+        res.render("auth/login",{
+            errs: [
+                'User does not exist'
+            ],
+            values: req.body.Email 
+        })
         return
     }
-    if(!user.password == password){
-        res.render("auth/login")
+    if(user.password !== password){
+        res.render("auth/login",{
+            errs: [
+                'Password required'
+            ]
+        })
         return
     }
     res.cookie("username", user.name)
-    next()
-}
-
-module.exports.loginSession = (req, res, next)=>{
-    // console.log(req.cookies)
-    var user = db.get("users").find({name: req.cookies.username}).value()
-    if(!user){
-        res.redirect("/login")
-        return
-    }
     next()
 }
