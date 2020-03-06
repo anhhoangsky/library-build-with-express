@@ -64,13 +64,25 @@
       "bookName": "Anh",
       "description": "sad",
       "bookId": "4an8pPP50SJzxM1dAC1rcBZDzmanwI"
+    },
+    {
+      "bookName": "Anh",
+      "description": "nothing",
+      "bookId": "IYDVy2oeWxvkWCLAuB34OddnaDMYkW"
     }
   ],
   "users": [
     {
+      "userId": "1",
       "name": "AnhSky",
       "email": "AnhSky@gmail.com",
-      "password": "skyanh"
+      "password": "160997832cfd7bd913a3cea37c3e57b4"
+    },
+    {
+      "userId": "2",
+      "name": "SkyAnh",
+      "email": "SkyAnh@gmail.com",
+      "password": "d7bf29cd318caaab9aea82cf6e2d3453"
     }
   ]
 }

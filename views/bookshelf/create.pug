@@ -1,8 +1,10 @@
 extends ../layout/b4.pug
+
 block content
-    link(rel="stylesheet", href="/style/bookshelf.style.css")
+    style
+        include ../includes/style/bookshelf.style.css
+    h1.text-center Add Book
     .m-4
-        h1 Add Book
         form(action="/bookshelf/create", method="POST")
             label(for="") Book name:
                 input(type="text", name="bookName", class="form-control")
@@ -13,7 +15,7 @@ block content
             button(class="btn btn-outline-success") Create
     if errs
         each err in errs
-            .toast(style='position: absolute; top: 0; right: 0;' data-errs="true" data-delay="7000")
+            .toast(style='position: absolute; top: 80px; right: 0;' data-errs="true" data-delay="7000")
                 .toast-header
                 img.rounded.mr-2(src='/img/toast.jpg',width="30px",height="30px", alt='...')
                 strong.mr-auto Something wrong
@@ -23,4 +25,5 @@ block content
                 .toast-body 
                     h4= err
                 |OMG! Love You So Much
-    script(src="/script/bookshelf.script.js")
+    script
+        include ../includes/script/bookshelf.script.js

@@ -1,26 +1,28 @@
 extends ../layout/b4.pug
 block content
-    link(rel="stylesheet", href="/style/auth.style.css")
-    .m-4
+    style
+        include ../includes/style/auth.style.css
+    .p-4
         h1 LOGIN
-        form(action="", method="POST")
+        form(action="login", method="POST")
             label(for="") Email:
-                input(type="Email", name="Email", value = values ? values : "", class="form-control")
+                input(type="Email", name="Email", value= email ? email : "", class="form-control")
             br
             label(for="") Password:
                 input(type="Password", name="Password",class="form-control")
             br
             button(class="btn btn-outline-success") Login
-    if errs
-        each err in errs
-            .toast(style='position: absolute; top: 0; right: 0;' data-errs="true" data-delay="7000")
-                .toast-header
-                img.rounded.mr-2(src='/img/toast.jpg',width="30px",height="30px", alt='...')
-                strong.mr-auto Something wrong
-                small  Ohm..!
-                button.ml-2.mb-1.close(type='button', data-dismiss='toast', aria-label='Close')
-                    span(aria-hidden='true') &times;
-                .toast-body 
-                    h4= err
-                |OMG! Love You So Much
-    script(src="/script/auth.script.js")
+        if errs
+            each err in errs
+                .toast(style='position: absolute; top: 80px; right: 0;' data-errs="true" data-delay="7000")
+                    .toast-header
+                    img.rounded.mr-2(src='/img/toast.jpg',width="30px",height="30px", alt='...')
+                    strong.mr-auto Something wrong
+                    small  Ohm..!
+                    button.ml-2.mb-1.close(type='button', data-dismiss='toast', aria-label='Close')
+                        span(aria-hidden='true') &times;
+                    .toast-body 
+                        h4= err
+                    |OMG! Love You So Much
+    script
+        include ../includes/script/auth.script.js

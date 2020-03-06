@@ -6,14 +6,16 @@ block content
         p= quocte
     footer.blockquote-footer.text-center
         footer= footer
-    .toast(style='position: absolute; top: 0; right: 0;' data-delay="1500")
+    .toast(style='position: absolute; top: 80px; right: 0;' data-delay="1500")
         .toast-header
         img.rounded.mr-2(src='/img/toast.jpg',width="30px",height="30px", alt='...')
-        strong.mr-auto Welcome
+        strong.mr-auto Welcome 
+            span(style="color: #f00")=username ? username : ""
         small  Ohm..!
         button.ml-2.mb-1.close(type='button', data-dismiss='toast', aria-label='Close')
             span(aria-hidden='true') &times;
         .toast-body You are lovely
         |OMG! Love You So Much
 
-    script(src="/script.js")
+    script 
+        include includes/script/common.script.js
