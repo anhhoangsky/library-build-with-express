@@ -3,8 +3,10 @@ module.exports.login = (req, res) => {
 };
 
 module.exports.loginPost = (req, res) => {
-  if ("http://localhost:3000/login" == req.get("Referer"))
-    res.redirect("bookshelf");
-  // console.log(req.get("Referer"));
+  var ref = req.headers.referer
+    .split("/")
+    .slice(3)
+    .join("/");
+  if (ref === "login") res.redirect("bookshelf");
   else res.redirect("back");
 };

@@ -1,17 +1,23 @@
 extends ../layout/b4  
 block content
     h1.text-center List of Books
-    .m-4
-        form.form-group(action="bookshelf", method="post")
-            label(for="", class="mr-sm-2") Tìm Kiếm 
-                input(type="text", name="searchValues",class="form-control")
-            button(type="submit").btn.btn-outline-primary.m-2 Search
-        a(href="bookshelf/create").btn.btn-outline-primary.m-2 New
+    .m-5
+        form.form-group.row(action="bookshelf", method="post").ml-5
+            label(for="searchValues").mr-2 Tìm Kiếm:
+            input(type="text", placeholder=" Tìm kiếm..." name="searchValues",class="form-control").w-75.shadow-sm
+            button.mr-auto(type="submit").btn.btn-outline-primary Search
+        a.ml-5(href="bookshelf/create").btn.btn-outline-primary.m-2 New
         br
-        ul
+        .row.mx-auto
             each book in bookshelf
-                li 
-                    h3= book.bookName
-                    span(class="lead") description: 
-                    i= book.description
-                    a(href="bookshelf/" + book.bookId) View
+                .card.m-2.w-50.shadow-lg.rounded(style='max-width: 540px;')
+                    .row.no-gutters
+                        .col-md-4
+                            img.card-img(src='https://picsum.photos/id/1/200/200', alt='...')
+                        .col-md-8
+                            .card-body
+                                h5.card-title=book.bookName
+                                p.card-text
+                                    | #{book.description}
+                                p.card-text
+                                    small.text-muted Last updated 3 mins ago

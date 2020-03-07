@@ -1,7 +1,4 @@
 /* style */
-:root {
-  --primary-color: #fff;
-}
 .toast {
   background-color: rgba(255, 0, 64, 0.1);
   width: 300px;
@@ -11,11 +8,11 @@
 body {
   background-color: rgb(236, 235, 233);
 }
-.container {
-  background-color: rgb(226, 209, 209) !important;
+.container-fluid {
   /* height: 100%; */
   padding-left: 0px;
   padding-right: 0px;
+  color: --gray-dark;
 }
 .footer {
   display: flex;
@@ -34,4 +31,28 @@ body {
   width: 50px;
   height: 40px;
   border-radius: 50%;
+}
+.card {
+  opacity: 0.8;
+  /* transition: all 0.7s; */
+  /* box-shadow: none; */
+  /* background-color: cornflowerblue; */
+}
+.card:hover {
+  opacity: 1;
+  color: #000;
+  /* box-shadow: ; */
+  animation: card-move 0.7s;
+  animation-fill-mode: forwards;
+}
+.row {
+  justify-content: center;
+}
+@keyframes card-move {
+  from {
+    transform: scale(0.999);
+  }
+  to {
+    transform: scale(1.029);
+  }
 }
