@@ -2,6 +2,7 @@ html
     head
         title Library - #{ title ? title : "Welcome"}
         link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js")
         style
             include ../includes/style/common.style.css
         script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js')
@@ -16,15 +17,23 @@ html
                     img(src='/img/toast.jpg', alt='logo', style='width:40px;')
                 ul.navbar-nav
                     li.nav-item
-                        a.nav-link(href='/') Home
+                        a.nav-link(href='/', data-toggle="tooltip", data-placement="bottom", title="Home")
+                            i.fas.fa-home.fa-lg
+                            span   Home
                     li.nav-item
-                        a.nav-link(href='/bookshelf') Bookshelf
+                        a.nav-link(href='/bookshelf', data-toggle="tooltip", data-placement="bottom", title="Bookshelf")
+                            i.far.fa-folder-open.fa-lg
+                            span   Bookshelf
                     li.nav-item
-                        a.nav-link(href='#') Contact
+                        a.nav-link(href='#', title='Contact', data-toggle="tooltip", data-placement="bottom") 
+                            i.fas.fa-users.fa-lg
+                            span   Contact
             if username
-                a.btn.btn-outline-danger.my-2.my-sm-0.nav-link(href='/logout') Logout
+                a.btn.btn-outline-danger.my-2.my-sm-0.nav-link(href='/logout', data-placement="bottom", title="Sign out", data-toggle="tooltip") 
+                    i.fas.fa-sign-out-alt
             else
-                a.btn.btn-outline-success.my-2.my-sm-0.nav-link(href='/login') Login
+                a.btn.btn-outline-success.my-2.my-sm-0.nav-link(href='/login', data-placement="bottom", title='Sign in', data-toggle="tooltip")
+                    i.fas.fa-sign-in-alt
         .container-fluid
             block content
     footer

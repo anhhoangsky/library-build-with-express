@@ -3,10 +3,11 @@ module.exports.login = (req, res) => {
 };
 
 module.exports.loginPost = (req, res) => {
-  var ref = req.headers.referer
-    .split("/")
-    .slice(3)
-    .join("/");
-  if (ref === "login") res.redirect("bookshelf");
+  var ref = req.baseUrl;
+  // .headers.referer
+  //   .split("/")
+  //   .slice(3)
+  //   .join("/");
+  if (ref === "/login") res.redirect("bookshelf");
   else res.redirect("back");
 };

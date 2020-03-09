@@ -5,8 +5,12 @@ block content
         form.form-group.row(action="bookshelf", method="post").ml-5
             label(for="searchValues").mr-2 Tìm Kiếm:
             input(type="text", placeholder=" Tìm kiếm..." name="searchValues",class="form-control").w-75.shadow-sm
-            button.mr-auto(type="submit").btn.btn-outline-primary Search
-        a.ml-5(href="bookshelf/create").btn.btn-outline-primary.m-2 New
+            button.mr-auto(type="submit").btn.btn-outline-primary
+                <i class="fas fa-search fa-lg"></i>
+                span  Search
+        a.ml-5(href="bookshelf/create").btn.btn-outline-primary.m-2 
+            i.fas.fa-plus
+            span  New
         br
         .row.mx-auto
             each book in bookshelf
@@ -16,7 +20,8 @@ block content
                             img.card-img(src='https://picsum.photos/id/1/200/200', alt='...')
                         .col-md-8
                             .card-body
-                                h5.card-title=book.bookName
+                                h5.card-title
+                                    a(href=`/bookshelf/${book.bookId}`)=book.bookName
                                 p.card-text
                                     | #{book.description}
                                 p.card-text
