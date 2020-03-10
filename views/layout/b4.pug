@@ -14,7 +14,7 @@ html
                 span.navbar-toggler-icon
             div(class="collapse navbar-collapse", id="navbarTogglerDemo01")
                 a.navbar-brand(href='/')
-                    img(src='/img/toast.jpg', alt='logo', style='width:40px;')
+                    img(src='/img/toast.jpg', alt='logo', style='width:40px;', data-toggle="tooltip", data-placement="bottom", title="Home")
                 ul.navbar-nav
                     li.nav-item
                         a.nav-link(href='/', data-toggle="tooltip", data-placement="bottom", title="Home")
@@ -25,7 +25,7 @@ html
                             i.far.fa-folder-open.fa-lg
                             span   Bookshelf
                     li.nav-item
-                        a.nav-link(href='#', title='Contact', data-toggle="tooltip", data-placement="bottom") 
+                        a.nav-link(href='/contact', title='Contact', data-toggle="tooltip", data-placement="bottom") 
                             i.fas.fa-users.fa-lg
                             span   Contact
             if username

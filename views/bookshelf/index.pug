@@ -14,15 +14,17 @@ block content
         br
         .row.mx-auto
             each book in bookshelf
-                .card.m-2.w-50.shadow-lg.rounded(style='max-width: 540px;')
-                    .row.no-gutters
-                        .col-md-4
-                            img.card-img(src='https://picsum.photos/id/1/200/200', alt='...')
-                        .col-md-8
-                            .card-body
-                                h5.card-title
-                                    a(href=`/bookshelf/${book.bookId}`)=book.bookName
-                                p.card-text
-                                    | #{book.description}
-                                p.card-text
-                                    small.text-muted Last updated 3 mins ago
+                .col-sm-4
+                    .card.m-2.shadow-lg.rounded(style='max-width: 540px;')
+                        .row.no-gutters
+                            .col-md-4
+                                i.fas.fa-bookmark.fa-lg.text-success.position-absolute
+                                img.card-img(src='https://picsum.photos/id/1/200/270', alt='...')
+                            .col-md-8
+                                .card-body
+                                    h5.card-title
+                                        a(href=`/bookshelf/${book.bookId}`)=book.bookName
+                                    p.card-text
+                                        | #{book.description}
+                                    p.card-text
+                                        small.text-muted Last updated 3 mins ago
