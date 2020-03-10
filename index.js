@@ -17,11 +17,13 @@ var bookshelf = require("./routes/bookshelf.router.js");
 var auth = require("./routes/auth.router");
 var home = require("./routes/home.router");
 var logout = require("./routes/logout.router");
+var contact = require("./routes/contact.router");
 
 app.use("/", home);
 app.use("/bookshelf", middleware.loginSession, bookshelf); //List Book
 app.use("/login", auth); //login
 app.use("/logout", logout);
+app.use("/contact", contact);
 //static files
 app.use(express.static("public"));
 app.listen(port, () => console.log(`app listening on port ${port}!`));
